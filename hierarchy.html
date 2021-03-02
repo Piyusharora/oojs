@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<p id="demo"></p>
+
+<script>
+class person {
+  constructor(name) {
+    this.name = name;
+  }
+  present() {
+    return 'Name is:- ' + this.name+'<br>';
+  }
+}
+
+class employee extends person {
+  constructor(name, eid) {
+    super(name);
+    this.eid = eid;
+  }
+  show() {
+    return this.present() + 'Eid is:- ' + this.eid +'<br>';
+  }
+}
+class developers extends employee {
+  constructor(name,eid,dtype) {
+    super(name,eid);
+    this.dtype = dtype;
+  }
+
+dev() {
+    return this.show() + 'Developers Type:- ' + this.dtype;
+  }
+}
+
+let emp = new developers("Ram", "001","Software");
+document.getElementById("demo").innerHTML = emp.dev();
+</script>
+
+</body>
+</html>
