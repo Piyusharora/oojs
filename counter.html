@@ -1,0 +1,35 @@
+<html>
+<body>
+<h3>Javascript closure counter</h3>
+<div id='counter' class="counter">0</div>
+<button type="submit" id="submit">Increment</button>
+<style>
+button {
+  margin:10px;
+}
+
+.counter {
+  margin: 10px;
+}
+</style>
+<script>
+
+function makeFunc() {
+  var count = 0;
+  function countUp() {
+    count ++;
+    return count;
+  }
+  return countUp;
+};
+
+
+var myFunc = makeFunc();
+
+document.getElementById('submit').addEventListener ('click',function(e){
+  e.preventDefault();
+  document.getElementById('counter').innerHTML = myFunc();
+});
+</script>
+</body>
+</html>
