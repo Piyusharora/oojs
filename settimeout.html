@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+  <div id="text"></div>
+<script type="text/javascript">
+
+var content = ["Hello", "World", "How", "Are", "You", "Today"];
+
+function delay(content) {
+    for (var i = 0; i < content.length; i++) {
+        
+        (function (i) {
+            setTimeout(function () {
+                document.getElementById('text').innerHTML += content[i];
+                console.log(content[i]);
+            }, 3000 * i);
+        })(i);
+    };
+}
+delay(content);
+
+</script>
+</body>
+</html>
