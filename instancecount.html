@@ -1,0 +1,32 @@
+<html>
+    <head>
+        </head>
+        <body>
+<script>
+var invocation_count=0;
+var instance_count=0;
+
+function Person(firstname,lastname){
+
+    this.firstname=firstname;
+    this.lastname=lastname;
+    instance_count+=1;
+}
+Person.prototype.getFull=function(){
+    invocation_count+=1;
+    return this.firstname+" "+ this.lastname;
+};
+
+var person1= new Person("rahul","verma");
+var person2= new Person("karan","mittal");
+var person3= new Person("vatsal","singh");
+var person4= new Person("piyush","arora");
+
+console.log(person1.getFull());
+console.log(person2.getFull());
+console.log(person4.getFull());
+console.log("number of function invocation:",invocation_count);
+console.log("number of instances:",instance_count);
+</script>
+</body>
+</html>
